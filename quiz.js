@@ -113,6 +113,22 @@ const quizCategories = {
     ]
 };
 
+// Function to calculate the player's score
+function calculateScore(correctAnswers) {
+    return correctAnswers * 10; // Example: 10 points per correct answer
+}
+
+// Function to handle quiz completion
+function completeQuiz(correctAnswers) {
+    const playerName = prompt("Enter your name to save your score:");
+    if (playerName) {
+        const playerScore = calculateScore(correctAnswers);
+        updateHighScores(playerName, playerScore);
+        alert(`Quiz complete! Your score: ${playerScore}`);
+        window.location.href = "index.html"; // Redirect to the homepage
+    }
+}
+
 // Function to display quiz questions for a specific category
 function displayQuizQuestions(category) {
     const quizContainer = document.getElementById("quiz-container");
@@ -123,6 +139,8 @@ function displayQuizQuestions(category) {
         quizContainer.innerHTML = `<p>No questions available for this category.</p>`;
         return;
     }
+
+    let correctAnswers = 0;
 
     questions.forEach((quiz, index) => {
         const questionElement = document.createElement("div");
@@ -142,6 +160,9 @@ function displayQuizQuestions(category) {
             optionButton.addEventListener("click", () => {
                 if (!optionButton.disabled) {
                     lockQuestionOptions(optionButton, optionsList, option, quiz.correctAnswer, questionElement);
+                    if (option === quiz.correctAnswer) {
+                        correctAnswers++;
+                    }
                 }
             });
 
@@ -152,6 +173,12 @@ function displayQuizQuestions(category) {
         questionElement.appendChild(optionsList);
         quizContainer.appendChild(questionElement);
     });
+
+    // Add a "Finish Quiz" button
+    const finishButton = document.createElement("button");
+    finishButton.textContent = "Finish Quiz";
+    finishButton.addEventListener("click", () => completeQuiz(correctAnswers));
+    quizContainer.appendChild(finishButton);
 }
 
 // Function to lock all options for a question and provide feedback

@@ -4,13 +4,18 @@ const quizzes = [ // Sample quiz data
     { id: 3, name: "Quiz 3" }
 ];
 
-const highScores = [ // Sample high score data
-    { player: "Player1", score: 100 },
-    { player: "Player2", score: 90 },
-    { player: "Player3", score: 80 }
-];
+// Initialize high scores in localStorage if not already set
+if (!localStorage.getItem("highScores")) {
+    const initialHighScores = [
+        { player: "Player1", score: 0 },
+        { player: "Player2", score: 0 },
+        { player: "Player3", score: 0 }
+    ];
+    localStorage.setItem("highScores", JSON.stringify(initialHighScores));
+}
 
-function displayQuizzes() { // Function to display quizzes
+// Function to display quizzes
+function displayQuizzes() {
     const quizList = document.getElementById("quizzes").querySelector("ul");
     quizList.innerHTML = "";
 
@@ -24,10 +29,12 @@ function displayQuizzes() { // Function to display quizzes
     });
 }
 
-function displayHighScores() { // Function to display high scores
-    const highScoreList = document.getElementById("high-scores").querySelector("ul");
-    highScoreList.innerHTML = ""; 
+// Function to display high scores on the homepage
+function displayHighScores() {
+    const highScoreList = document.getElementById("high-score-list");
+    highScoreList.innerHTML = ""; // Clear existing content
 
+    const highScores = JSON.parse(localStorage.getItem("highScores"));
     highScores.forEach(score => {
         const listItem = document.createElement("li");
         listItem.textContent = `${score.player}: ${score.score}`;
@@ -35,9 +42,11 @@ function displayHighScores() { // Function to display high scores
     });
 }
 
-function initializeHomepage() { // Initialize the homepage
+// Initialize the homepage
+function initializeHomepage() {
     displayQuizzes();
     displayHighScores();
 }
 
-document.addEventListener("DOMContentLoaded", initializeHomepage); // Wait for the DOM to load before initializing the homepage
+// Call the initialization function when the homepage loads
+document.addEventListener("DOMContentLoaded", initializeHomepage);
