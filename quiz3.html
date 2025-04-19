@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz 3</title>
+    <title>Science</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="shared.js" defer></script>
     <script src="quiz.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Quiz 3</h1>
+        <h1>Science</h1>
     </header>
     <main>
-        <div id="quiz-container"></div>
-        <a href="index.html">Back to Homepage</a>
+        <div class="container">
+            <!-- Quiz Content Section -->
+            <section id="quiz-container" class="main-content">
+                <!-- Quiz questions will be dynamically loaded here -->
+                <button id="finish-quiz-button" class="finish-quiz-button" style="display: none;">Finish Quiz</button>
+            </section>
+
+            <!-- High Scores Section -->
+            <aside id="high-scores" class="sidebar">
+                <h2>High Scores</h2>
+                <ul id="high-score-list">
+                    <!-- High scores will be dynamically loaded here -->
+                </ul>
+            </aside>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 The Ultimate Quiz Showdown</p>

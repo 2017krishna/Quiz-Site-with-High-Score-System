@@ -13,22 +13,27 @@
         <h1>The Ultimate Quiz Showdown</h1>
     </header>
     <main>
-        <section id="high-scores">
-            <h2>High Scores</h2>
-            <ul id="high-score-list">
-                <li>Player1: 0</li>
-                <li>Player2: 0</li>
-                <li>Player3: 0</li>
-            </ul>
-        </section>
-        <section id="quizzes">
-            <h2>Available Quizzes</h2>
-            <ul>
-                <li><a href="quiz1.html?category=GeneralKnowledge">General Knowledge</a></li>
-                <li><a href="quiz1.html?category=Math">Math</a></li>
-                <li><a href="quiz1.html?category=Science">Science</a></li>
-            </ul>
-        </section>
+        <div class="container">
+            <!-- Quiz Selection Section -->
+            <section id="quizzes" class="main-content">
+                <h2>Available Quizzes</h2>
+                <ul>
+                    <li><a href="quiz1.html">General Knowledge</a></li>
+                    <li><a href="quiz2.html">Math</a></li>
+                    <li><a href="quiz3.html">Science</a></li>
+                </ul>
+            </section>
+
+            <!-- High Scores Section -->
+            <aside id="high-scores" class="sidebar">
+                <h2>High Scores</h2>
+                <ul id="high-score-list">
+                    <li>Player1: 0</li>
+                    <li>Player2: 0</li>
+                    <li>Player3: 0</li>
+                </ul>
+            </aside>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 The Ultimate Quiz Showdown</p>

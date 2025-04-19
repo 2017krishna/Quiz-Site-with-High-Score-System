@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,14 +15,32 @@ header {
     padding: 1rem;
 }
 
-main {
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    margin-top: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
     padding: 1rem;
 }
 
-section {
-    margin-bottom: 2rem;
-    padding: 1rem;
+.main-content {
+    flex: 3;
     background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    flex: 1;
+    background: #f1f1f1;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -42,15 +61,9 @@ ul li {
 a {
     color: #4CAF50;
     text-decoration: none;
+    font-size: 1.2rem;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    margin-top: 2rem;
 }

@@ -29,12 +29,12 @@ function displayQuizzes() {
     });
 }
 
-// Function to display high scores on the homepage
+// Function to display high scores on the page
 function displayHighScores() {
     const highScoreList = document.getElementById("high-score-list");
     highScoreList.innerHTML = ""; // Clear existing content
 
-    const highScores = JSON.parse(localStorage.getItem("highScores"));
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     highScores.forEach(score => {
         const listItem = document.createElement("li");
         listItem.textContent = `${score.player}: ${score.score}`;
@@ -42,11 +42,11 @@ function displayHighScores() {
     });
 }
 
-// Initialize the homepage
-function initializeHomepage() {
+// Initialize the page
+function initializePage() {
     displayQuizzes();
     displayHighScores();
 }
 
-// Call the initialization function when the homepage loads
-document.addEventListener("DOMContentLoaded", initializeHomepage);
+// Call the initialization function when the page loads
+document.addEventListener("DOMContentLoaded", initializePage);

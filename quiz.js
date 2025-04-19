@@ -123,17 +123,33 @@ function completeQuiz(correctAnswers) {
     const playerName = prompt("Enter your name to save your score:");
     if (playerName) {
         const playerScore = calculateScore(correctAnswers);
-        updateHighScores(playerName, playerScore);
-        alert(`Quiz complete! Your score: ${playerScore}`);
+        const confirmation = confirm(`Your score is ${playerScore}. Do you want to save it to the high score list?`);
+        if (confirmation) {
+            updateHighScores(playerName, playerScore);
+            alert(`Quiz complete! Your score: ${playerScore} has been saved.`);
+        } else {
+            alert("Your score was not saved.");
+        }
         window.location.href = "index.html"; // Redirect to the homepage
     }
 }
 
 // Function to display quiz questions for a specific category
-function displayQuizQuestions(category) {
+function displayQuizQuestions() {
     const quizContainer = document.getElementById("quiz-container");
     quizContainer.innerHTML = ""; // Clear existing content
 
+    // Determine the category based on the page
+    let category;
+    if (document.title === "General Knowledge") {
+        category = "GeneralKnowledge";
+    } else if (document.title === "Math") {
+        category = "Math";
+    } else if (document.title === "Science") {
+        category = "Science";
+    }
+
+    // Get the questions for the selected category
     const questions = quizCategories[category];
     if (!questions) {
         quizContainer.innerHTML = `<p>No questions available for this category.</p>`;
@@ -142,6 +158,7 @@ function displayQuizQuestions(category) {
 
     let correctAnswers = 0;
 
+    // Display the questions
     questions.forEach((quiz, index) => {
         const questionElement = document.createElement("div");
         questionElement.classList.add("question");
@@ -174,11 +191,10 @@ function displayQuizQuestions(category) {
         quizContainer.appendChild(questionElement);
     });
 
-    // Add a "Finish Quiz" button
-    const finishButton = document.createElement("button");
-    finishButton.textContent = "Finish Quiz";
+    // Show the "Finish Quiz" button and attach functionality
+    const finishButton = document.getElementById("finish-quiz-button");
+    finishButton.style.display = "block"; // Make the button visible
     finishButton.addEventListener("click", () => completeQuiz(correctAnswers));
-    quizContainer.appendChild(finishButton);
 }
 
 // Function to lock all options for a question and provide feedback
@@ -202,10 +218,10 @@ function lockQuestionOptions(selectedButton, optionsList, selectedOption, correc
     questionElement.appendChild(feedback);
 }
 
-// Initialize the quiz page with a default category
+// Initialize the quiz page
 function initializeQuizPage() {
-    const category = new URLSearchParams(window.location.search).get("category") || "GeneralKnowledge";
-    displayQuizQuestions(category);
+    displayQuizQuestions();
+    displayHighScores(); // Ensure high scores are displayed on quiz pages
 }
 
 // Call the initialization function when the page loads
