@@ -47,7 +47,7 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 
 ### Video Demo
 
-[![Watch the video](https://img.youtube.com/vi/<VIDEO_ID>/0.jpg)](https://www.youtube.com/watch?v=<VIDEO_ID>)
+[![Watch the video](https://img.youtube.com/vi/ghMHYGjZrXQ/0.jpg)](https://www.youtube.com/watch?v=ghMHYGjZrXQ)
 
 ### Documentation and Resources
 
