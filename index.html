@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Quiz Showdown</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="shared.js" defer></script>
+    <script src="script.js" defer></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.getElementById("high-score-list")) {
+                displayHighScores();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>The Ultimate Quiz Showdown</h1>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Quiz Selection Section -->
+            <section id="quizzes" class="main-content">
+                <h2>Available Quizzes</h2>
+                <ul>
+                    <li><a href="quiz1.html">General Knowledge</a></li>
+                    <li><a href="quiz2.html">Math</a></li>
+                    <li><a href="quiz3.html">Science</a></li>
+                </ul>
+            </section>
+
+            <!-- High Scores Section -->
+            <aside id="high-scores" class="sidebar">
+                <h2>High Scores</h2>
+                <ul id="high-score-list">
+                    <li>Player1: 0</li>
+                    <li>Player2: 0</li>
+                    <li>Player3: 0</li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 The Ultimate Quiz Showdown</p>
+    </footer>
+</body>
+</html>
