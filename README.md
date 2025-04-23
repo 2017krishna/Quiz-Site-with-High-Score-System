@@ -27,10 +27,8 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 1. **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/your-repo-link.git](https://github.com/your-repo-link.git)
+    git clone [https://github.com/2017krishna/Quiz-Site-with-High-Score-System](https://github.com/2017krishna/Quiz-Site-with-High-Score-System)
     ```
-
-    *(Replace `https://github.com/your-repo-link.git` with the actual link to your repository)*
 
 2. **Navigate to the project directory:**
 
@@ -45,7 +43,7 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 
 ### Team Members
 
-* [Your Name]: Developer, Project Lead
+* [Krishna Pushparajah]: Developer, Project Lead
 
 ### Video Demo
 
@@ -53,9 +51,9 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 
 ### Documentation and Resources
 
-* **Project Documentation:** [Link to Documentation](https://your-documentation-link.com)
-* **Issue Board:** [Link to Issues](https://your-issues-link.com)
-* **Feature Branches:** [Link to Feature Branches](https://your-feature-branches-link.com)
+* **Project Documentation:** [Link to Documentation](https://github.com/users/2017krishna/projects/2)
+* **Issue Board:** [Link to Issues](https://github.com/2017krishna/Quiz-Site-with-High-Score-System/issues)
+* **Feature Branches:** [Link to Feature Branches](https://github.com/2017krishna/Quiz-Site-with-High-Score-System/branches)
 
 ### License
 
