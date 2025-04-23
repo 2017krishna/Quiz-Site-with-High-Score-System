@@ -13,7 +13,7 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 
 ### Screenshot
 
-[Insert a captivating screenshot of your quiz application here]
+![Screenshot of the Ultimate Quiz Showdown homepage](images/website-screenshot.png)
 
 ### Installation and Setup
 
@@ -47,7 +47,7 @@ The Ultimate Quiz Showdown is a dynamic and interactive quiz application that ch
 
 ### Video Demo
 
-[Link to your video demo here - e.g., Watch the Demo](https://your-video-demo-link.com)
+[![Watch the video](https://img.youtube.com/vi/<VIDEO_ID>/0.jpg)](https://www.youtube.com/watch?v=<VIDEO_ID>)
 
 ### Documentation and Resources
 
